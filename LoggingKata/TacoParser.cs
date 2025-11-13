@@ -24,14 +24,19 @@
             // TODO: Grab the latitude from your array at index 0
             // You're going to need to parse your string as a `double`
             // which is similar to parsing a string as an `int`
+            var latitude = cells[0];
+            var latitudeDouble = double.Parse(latitude);
             
             
             // TODO: Grab the longitude from your array at index 1
             // You're going to need to parse your string as a `double`
             // which is similar to parsing a string as an `int`
+            var longitude = cells[1];
+            var longitudeDouble = double.Parse(longitude); 
             
             
             // TODO: Grab the name from your array at index 2
+            var name = cells[2];
             
 
             // TODO: Create a TacoBell class
