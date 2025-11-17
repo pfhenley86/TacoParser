@@ -1,4 +1,6 @@
-﻿namespace LoggingKata
+﻿using System;
+
+namespace LoggingKata
 {
     /// <summary>
     /// Parses a POI file to locate all the Taco Bells
@@ -18,6 +20,7 @@
             if (cells.Length < 3)
             {
                 // Log error message and return null
+                Console.WriteLine("Parsing error. Array Length is less than 3.");
                 return null; 
             }
 
