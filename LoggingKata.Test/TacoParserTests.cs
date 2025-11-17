@@ -31,8 +31,10 @@ namespace LoggingKata.Test
             //       represents a TacoBell location
 
             //Arrange
+            var tester = new TacoParser();
 
             //Act
+            var actual = tester.Parse(line);
 
             //Assert
         }
