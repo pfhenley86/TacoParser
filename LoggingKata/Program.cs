@@ -79,6 +79,14 @@ namespace LoggingKata
                     // TODO: Now, still being inside the scope of the second for loop, compare the two locations using `.GetDistanceTo()` method, which returns a double.
                     // If the distance is greater than the currently saved distance, update the distance variable and the two `ITrackable` variables you set above.
                     
+                    double getDistance = corA.GetDistanceTo(corB);
+
+                    if (getDistance > distance)
+                    {
+                        tacobellOne.Name = locA.Name;
+                        tacobellTwo.Name = locB.Name;
+                    }
+
                 }
                 
             }
@@ -87,7 +95,8 @@ namespace LoggingKata
 
             // Once you've looped through everything, you've found the two Taco Bells farthest away from each other.
             // Display these two Taco Bell locations to the console.
-
+            
+            Console.WriteLine($"The two furthers Tacobells are {tacobellOne.Name} and {tacobellTwo.Name}");
 
 
         }
