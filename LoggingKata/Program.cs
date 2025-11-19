@@ -28,7 +28,7 @@ namespace LoggingKata
             var parser = new TacoParser();
 
             // Use the Select LINQ method to parse every line in lines collection
-            var locations = lines.Select(parser.Parse).ToArray();
+            var locations = lines.Select(line => parser.Parse(line)).ToArray();
 
   
             // Complete the Parse method in TacoParser class first and then START BELOW ----------
@@ -55,6 +55,10 @@ namespace LoggingKata
             // This loop will let you select one location at a time to act as the "starting point" or "origin" location.
             // Naming suggestion for variable: `locA`
 
+            for (i - 0; i < locations.Length; i++)
+            {
+                var locA = locations[i];
+            }
             // TODO: Once you have locA, create a new Coordinate object called `corA` with your locA's latitude and longitude.
 
             // SECOND FOR LOOP -
