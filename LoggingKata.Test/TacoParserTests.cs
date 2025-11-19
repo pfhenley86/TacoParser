@@ -29,15 +29,18 @@ namespace LoggingKata.Test
             //       to extract the Longitude.  
             //       Each "line" from your .csv file
             //       represents a TacoBell location
-
+            
             //Arrange
             var tester = new TacoParser();
-
+            
             //Act
-            var actual = tester.Parse(line);
-
+            var pointInfo = tester.Parse(line);
+            var actual = pointInfo.Location.Longitude;
+            
             //Assert
             Assert.Equal(expected, actual);
+
+            
         }
 
 
@@ -51,7 +54,8 @@ namespace LoggingKata.Test
             var tester = new TacoParser();
             
             //Act
-            var actual = tester.Parse(line);
+            var pointInfo = tester.Parse(line);
+            var actual = pointInfo.Location.Latitude;
             
             //Assert
             Assert.Equal(expected, actual);
