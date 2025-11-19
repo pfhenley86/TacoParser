@@ -57,7 +57,7 @@ namespace LoggingKata
 
             for (i - 0; i < locations.Length; i++)
             {
-                var locA = locations[i];
+                var locA = locations[i];//
             }
             // TODO: Once you have locA, create a new Coordinate object called `corA` with your locA's latitude and longitude.
 
