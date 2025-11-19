@@ -35,12 +35,10 @@ namespace LoggingKata
 
             // TODO: Create two `ITrackable` variables with initial values of `null`. 
             // These will be used to store your two Taco Bells that are the farthest from each other.
-            ITrackable tacobellOne = new TacoBell();
-            tacobellOne.Name = null;
+            ITrackable tacobellOne = null;
             
             
-            ITrackable tacobellTwo = new TacoBell();
-            tacobellTwo.Name = null;
+            ITrackable tacobellTwo = null;
 
             // TODO: Create a `double` variable to store the distance
             double distance = 0;
@@ -83,8 +81,8 @@ namespace LoggingKata
 
                     if (getDistance > distance)
                     {
-                        tacobellOne.Name = locA.Name;
-                        tacobellTwo.Name = locB.Name;
+                        tacobellOne = locA.Location;
+                        tacobellTwo = locB.Location;
                     }
 
                 }
@@ -96,7 +94,7 @@ namespace LoggingKata
             // Once you've looped through everything, you've found the two Taco Bells farthest away from each other.
             // Display these two Taco Bell locations to the console.
             
-            Console.WriteLine($"The two furtherest Tacobells are {tacobellOne.Name} and {tacobellTwo.Name}");
+            Console.WriteLine($"The two furtherest Tacobells are {tacobellOne} and {tacobellTwo}");
 
 
         }
