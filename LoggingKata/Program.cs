@@ -59,30 +59,33 @@ namespace LoggingKata
                 
                 // TODO: Once you have locA, create a new Coordinate object called `corA` with your locA's latitude and longitude.
                 
-                var corA = new GeoCoordinate(locA.Location.Latitude, locA.Location.Longitude);
+                var corA = new GeoCoordinate();
+                corA.Latitude = locA.Location.Latitude;
+                corA.Longitude = locA.Location.Longitude;
 
                 // SECOND FOR LOOP -
                 // TODO: Now, Inside the scope of your first loop, create another loop to iterate through locations again.
                 // This allows you to pick a "destination" location for each "origin" location from the first loop. 
                 // Naming suggestion for variable: `locB`
 
-                for (var s = 0; s < locations.Length; s++)
+                for (var j = 0; j < locations.Length; j++)
                 {
-                    var locB = locations[s];
+                    var locB = locations[j];
                     
                     // TODO: Once you have locB, create a new Coordinate object called `corB` with your locB's latitude and longitude.
                 
-                    var corB = new GeoCoordinate(locB.Location.Latitude, locB.Location.Longitude);
+                    var corB = new GeoCoordinate();
+                    corB.Latitude = locB.Location.Latitude;
+                    corB.Longitude = locB.Location.Longitude;
                     
                     // TODO: Now, still being inside the scope of the second for loop, compare the two locations using `.GetDistanceTo()` method, which returns a double.
                     // If the distance is greater than the currently saved distance, update the distance variable and the two `ITrackable` variables you set above.
-                    
-                    double getDistance = corA.GetDistanceTo(corB);
 
-                    if (getDistance > distance)
+                    if (corA.GetDistanceTo(corB) > distance)
                     {
-                        tacobellOne = locA.Location;
-                        tacobellTwo = locB.Location;
+                        distance = corA.GetDistanceTo(corB);
+                        tacobellOne = locA;
+                        tacobellTwo = locB;
                     }
 
                 }
@@ -94,7 +97,7 @@ namespace LoggingKata
             // Once you've looped through everything, you've found the two Taco Bells farthest away from each other.
             // Display these two Taco Bell locations to the console.
             
-            Console.WriteLine($"The two furtherest Tacobells are {tacobellOne} and {tacobellTwo}");
+            Console.WriteLine($"The two furtherest Tacobells are {tacobellOne.Name} and {tacobellTwo.Name} and the distance is {distance}");
 
 
         }
